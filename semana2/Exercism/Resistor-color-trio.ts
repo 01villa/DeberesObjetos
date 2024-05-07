@@ -1,54 +1,45 @@
-export function decodedValue(color: string): number {
-  if (color === 'black') return 0;
-  if (color === 'brown') return 1;
-  if (color === 'red') return 2;
-  if (color === 'orange') return 3;
-  if (color === 'yellow') return 4;
-  if (color === 'green') return 5;
-  if (color === 'blue') return 6;
-  if (color === 'violet') return 7;
-  if (color === 'grey') return 8;
-  if (color === 'white') return 9;
-  return -1;
+export function decodedResistorValue(colors: Array<string>): string {
+  var value = (10 * calculate_value(colors[0]) + calculate_value(colors[1])) * Math.pow(10, calculate_value(colors[2]))
+  var unit = ' ohms'
+  switch (true){
+    case (value > 1000000000):
+      unit = ' gigaohms'
+      value /= 1000000000
+      break
+    case (value > 1000000):
+      unit = ' megaohms'
+      value /= 1000000
+      break
+    case (value > 1000):
+      unit = ' kiloohms'
+      value /= 1000
+      break
+  }
+    
+  return ''.concat(value.toString(), unit)
 }
-
-export function decodedResistorValue(colors: string[]): string {
-  let code = '';
-  const LIMIT = 2;
-  for (let index = 0; index < LIMIT; index++) {
-    code += decodedValue(colors[index]);
+function calculate_value(color:string): number {
+  switch(color){
+    case 'black':  
+      return 0
+    case 'brown': 
+      return 1
+    case 'red':
+      return 2
+    case 'orange': 
+      return 3
+    case 'yellow': 
+      return 4
+    case 'green': 
+      return 5
+    case 'blue': 
+      return 6
+    case 'violet': 
+      return 7
+    case 'grey': 
+      return 8
+    case 'white': 
+      return 9
   }
-  // if there is a leading zero, it is deleted
-  code = String(Number(code));
-  // Calculating the size
-  let size = decodedValue(colors[2]);
-  if (code[1] === '0') {
-    size++;
-    code = code[0];
-  }
-  if (size < 3) {
-    code = addZeros(size, code);
-    code += ' ohms';
-  } 
-  if (size >= 3 && size < 6) {
-    code = addZeros(size - 3, code);
-    code += ' kiloohms';
-  }
-  if (size >= 6 && size < 9) {
-    code = addZeros(size - 6, code);
-    code += ' megaohms';
-  }
-  if (size >= 9) code += ' gigaohms';
-  return code;
-}
-
-const addZeros = (size: number, code: string) => {
-  if (size >= 1 && size <= 2) {
-    let numberOfZeros = 0;
-    while (numberOfZeros < size) {
-      code += '0';
-      numberOfZeros++;
-    }
-  }
-  return code;
+  return 0
 }
