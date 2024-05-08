@@ -11,5 +11,4 @@ https://youtu.be/4OXwukJD7ag
 Exercim 3.
 
 Este código exporta una función llamada colorCode y un array llamado COLORS. La función colorCode toma un color como entrada y devuelve su índice en el array COLORS. El array COLORS contiene una lista de colores comúnmente utilizados en la codificación de resistencias. 
-
 https://youtu.be/pPQUfqv8h88
