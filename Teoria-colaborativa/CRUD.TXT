@@ -1,7 +1,7 @@
 Teoría:
 En TypeScript, las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) son esenciales para manipular datos en aplicaciones. Estas operaciones se realizan utilizando clases y funciones que interactúan con la base de datos. Por ejemplo, se pueden definir clases para representar objetos y funciones para realizar consultas, actualizaciones y eliminaciones de datos.
 
-
+![alt text](image-2.png)
 
 Reflexión:
 La implementación de operaciones CRUD en TypeScript nos hace reflexionar sobre la importancia de un diseño claro y eficiente. Es crucial considerar aspectos como la seguridad de los datos y la optimización del rendimiento al implementar estas operaciones. Además, debemos seguir las mejores prácticas de programación y diseño de software.

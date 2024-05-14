@@ -1,8 +1,9 @@
 Teoría:
 El despliegue de aplicaciones Nest.js implica configuraciones específicas para garantizar un funcionamiento adecuado en entornos de producción. Esto incluye ajustes en el código, configuraciones de variables de entorno y la integración con plataformas de despliegue como Railway. La modificación del archivo main.ts y del archivo package.json son pasos esenciales en este proceso, ya que definen cómo se ejecuta la aplicación y qué scripts se utilizan para construirla y desplegarla.
 
+![alt text](image.png)
 
-
+![alt text](image-1.png)
 
 
 Reflexión:
